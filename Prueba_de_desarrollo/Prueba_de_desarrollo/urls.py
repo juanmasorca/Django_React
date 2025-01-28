@@ -1,0 +1,9 @@
+# Prueba_de_desarrollo/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('core/', include('core.urls')),  # Incluimos las URLs de la app 'core'
+]
