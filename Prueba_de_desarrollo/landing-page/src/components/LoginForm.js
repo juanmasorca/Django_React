@@ -11,24 +11,29 @@ const LoginForm = () => {
     e.preventDefault();
     setError(null);
 
+    const requestBody = JSON.stringify({ username, password });
+    console.log("Enviando datos:", requestBody); // Verificar los datos antes de enviarlos
+
     try {
       const response = await fetch("http://localhost:8000/core/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: requestBody,
       });
 
       const data = await response.json();
-
+      console.log("Respuesta del servidor:", data);
+      
       if (response.ok) {
+        localStorage.setItem("token", data.token)
         if (data.is_admin) {
           navigate("/admin-dashboard"); // Redirige a la consola del admin
         } else {
           navigate("/regular-dashboard"); // Redirige a la página regular
         }
-      } else {
+      } else { 
         setError(data.message || "Error al iniciar sesión");
       }
     } catch (err) {

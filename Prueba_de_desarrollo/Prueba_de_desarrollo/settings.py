@@ -25,8 +25,13 @@ SECRET_KEY = 'django-insecure-bzn68jd-80+9kxlvf5aquw9vo-5sm-b&nf)tdcy+t%#)6ll#ow
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_URL="/core/login/"
+
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',  # Agrega el dominio de tu servidor de desarrollo si no está incluido
+]
 
 # Application definition
 
@@ -39,18 +44,46 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
-    'corsheaders',      
+    'corsheaders',  
+    'rest_framework.authtoken'    
 ]
 
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',  # Exige autenticación por defecto
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+}
+
+
+
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',  # Descomenta esto si no necesitas la protección CSRF
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+]
+
+CSRF_COOKIE_SECURE = False  # No usar cookies seguras en desarrollo
+CSRF_COOKIE_HTTPONLY = False  # Desactiva cookies HttpOnly en desarrollo
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ROOT_URLCONF = 'Prueba_de_desarrollo.urls'
@@ -73,6 +106,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Prueba_de_desarrollo.wsgi.application'
 
+CORS_ALLOW_CREDENTIALS = True
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -85,6 +119,7 @@ DATABASES = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # URL donde corre tu frontend
 ]

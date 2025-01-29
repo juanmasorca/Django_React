@@ -8,7 +8,7 @@ function RegularDashboard() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                'Authorization': `token ${localStorage.getItem('token')}`,
             },
             body: JSON.stringify({ button_number: buttonNumber }),
         })
