@@ -29,7 +29,7 @@
         <table border="1">
           <thead>
             <tr>
-              <th>Nombre</th>
+              <th>NombreX</th>
               <th>Email</th>
               <th>Fecha de Registro</th>
             </tr>
