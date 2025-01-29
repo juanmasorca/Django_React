@@ -22,7 +22,7 @@ function RegularDashboard() {
             <h2>Bienvenido a la Landing Page</h2>
             <p>{message}</p>
             <button onClick={() => handleButtonClick(1)}>Botón 1</button>
-            <button onClick={() => handleButtonClick(2)}>Botón 2</button>
+            <button onClick={() => handleButtonClick(2)}>Botón 2b</button>
         </div>
     );
 }
