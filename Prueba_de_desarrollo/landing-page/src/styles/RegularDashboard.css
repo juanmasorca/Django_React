@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+  background-color: #f4f4f9; /* Fondo suave */
+  color: #333; /* Color de texto principal */
+}
+
+/* Contenedor principal */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Espaciado interno */
+  max-width: 1200px; /* Ancho máximo para evitar que se estire demasiado */
+  margin: 0 auto; /* Centrar en la página */
+}
+
+/* Contenedor del logo y el texto */
+.logo-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 800px; /* Ancho máximo */
+}
+
+/* Estilo de la imagen (logo) */
+.logo {
+  width: 80px; /* Tamaño de la imagen */
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Contenedor de texto */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+.title {
+  font-size: 28px; /* Tamaño de fuente más grande */
+  font-weight: 700; /* Negrita */
+  color: #2c3e50; /* Color oscuro moderno */
+  margin-bottom: 8px; /* Espacio debajo del título */
+}
+
+/* Descripción */
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-top: 0; /* Elimina el margen superior */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Mensajes y tiempo de sesión */
+.session-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Botones */
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600; /* Negrita */
+  cursor: pointer;
+  border: none;
+  background-color: #007bff; /* Color azul moderno */
+  color: white;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+button:active {
+  transform: translateY(0); /* Restablece la posición al hacer clic */
+}

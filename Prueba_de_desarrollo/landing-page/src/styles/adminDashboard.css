@@ -1,0 +1,72 @@
+/* Contenedor de la tabla */
+.table-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Hace que la tabla sea responsive */
+    max-height: 400px; /* Limita la altura de la tabla */
+    overflow-y: auto; /* Añade scroll vertical cuando se superen las 5 filas */
+  }
+  
+  /* Estilos de la tabla */
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center; /* Centra todo el contenido de la tabla */
+  }
+  
+  /* Centrar contenido en las celdas */
+  .users-table th,
+  .users-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Encabezados */
+  .users-table th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  /* Hover para filas */
+  .users-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos para celdas vacías o no disponibles */
+  .users-table td {
+    color: #555;
+  }
+  
+  /* Mensaje cuando no hay usuarios */
+  .users-table tbody tr td[colspan="7"] {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+  }
+  
+
+  /* Contenedor de los gráficos */
+  .graphs-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .graph {
+    flex: 1;
+    min-width: 300px; /* Aseguramos que los gráficos tengan un tamaño mínimo */
+    height: 300px; /* Define un tamaño fijo para los gráficos */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .graph h3 {
+    text-align: center;  /* Centra el texto */
+    width: 100%;         /* Asegura que el título ocupe todo el ancho disponible */
+    margin-bottom: 10px; /* Espacio debajo del título */
+  }
