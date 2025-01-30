@@ -4,6 +4,9 @@ Este proyecto consiste en una aplicación web para la gestión de usuarios, que 
 La aplicación permite gestionar la información de los usuarios registrados, como el tiempo de sesión y las interacciones con la interfaz,
 como clics en botones.
 
+Usename: Admin
+password: Prueba123\*
+
 ## Requisitos
 
 ### Frontend (React)
